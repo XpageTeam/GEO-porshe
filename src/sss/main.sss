@@ -1,0 +1,120 @@
+@import "../css/common.css"
+
+@import "_vars.sss"
+@import "_base.sss"
+@import "_text-styles.sss"
+
+.back, .test
+	
+	&-btn
+		border: 1px solid rgba(255, 255, 255, .3)
+		display: inline-block
+		user-select: none
+		position: relative
+		text-transform: uppercase
+		font-size: 12px
+
+		&:before
+			position: absolute
+			content: ""
+
+.test-btn
+	padding: 18px 27px 19px 57px
+
+	&:before
+		background: url("../img/ico-circle.svg") center no-repeat
+		size: 13px 12px
+		top: calc(50% - 6px)
+		left: 25px
+
+.back-btn
+	padding: 18px 21px 19px  48px
+
+	&:before
+		border-top: 1px solid #fff
+		border-left: 1px solid #fff
+		size: 5px
+		transform: rotate(-45deg)
+		top: calc(50% - 3px)
+		left: 25px
+
+.head
+	position: absolute 0 * * 0
+	width: 100%
+	z-index: 10
+
+	&__wrapper
+		margin: 0 auto
+		padding: 87px 20px 20px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		max-width: calc(1722px + 40px)
+		width: 100%
+
+.loaded
+
+	.first-screen
+
+		&__logos, &__text, &__link
+			opacity: 1
+			transform: translate3d(0, 0, 0)
+
+.first-screen
+	height: 100vh
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	text-align: center
+
+	&__logos, &__text, &__link
+		opacity: 0
+		transition: transform 1s ease, opacity 1s ease
+		transform: translate3d(0, 130%, 0)
+
+	&__text
+		font-weight: bold
+		line-height: normal
+		font-size: 64px
+		margin: vh(108) 0 0
+		padding-left: 60px
+		transition-delay: .3s
+
+		span
+			font-size: 144px
+			-webkit-text-fill-color: transparent
+			text-fill-color: transparent
+			-webkit-text-stroke: 1px #fff
+			text-stroke: 1px #fff
+
+	&__link
+		margin: 120px 0 0
+		transition-delay: .6s
+
+.watch-link
+	position: relative
+	padding-left: 61px
+	text-transform: uppercase
+	font-weight: 400
+	font-size: 12px
+
+	&:before
+		content: ""
+		position: absolute calc(50% - 23px) * * 0
+		background: url("../img/ico-play.svg") center no-repeat
+		size: 45px
+
+.logos
+	display: flex
+
+	&__logo
+		border: 1px solid rgba(255, 255, 255, 0.3)
+		size: 96px
+		display: flex
+		justify-content: center
+		align-items: center
+		border-radius: 5px
+
+		&:not(:last-child)
+			margin-right: 21px 

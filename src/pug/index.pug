@@ -1,0 +1,32 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Главная
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		//- include inc/header.pug
+		header.head
+			.head__wrapper
+				.head__back
+					a.back-btn(href="#") Вернуться на сайт
+				.head__btn
+					a.test-btn(href="#") Тест-драйв
+		main#content
+			setion.first-screen__cont
+				.wrapper
+					.first-screen
+						.first-screen__logos
+							.logos
+								a.logos__logo(href="#")
+									img(src="img/geo-logo.svg")
+								a.logos__logo(href="#")
+									img(src="img/porshe-logo.svg")
+						.first-screen__text GeoPro 
+							span  & 
+							| Porsche
+						.first-screen__link 
+							a.watch-link(href="#") 
+								span Смотерть видео
+		//- include inc/footer.pug
+		include inc/scripts.pug

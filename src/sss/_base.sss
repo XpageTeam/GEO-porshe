@@ -1,0 +1,182 @@
+html
+	font-size: 100%
+
+input, a, button, textarea, select
+	outline: none
+
+*::-webkit-input-placeholder
+	color: #adb4c6
+	opacity: 1
+
+*:-moz-placeholder
+	color: #adb4c6
+	opacity: 1
+
+*::-moz-placeholder
+	color: #adb4c6
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #adb4c6
+	opacity: 1
+
+.swiper-button-disabled
+	opacity: .5
+	pointer-events: none
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select, input[type="submit"], button
+	-webkit-appearance: none
+	appearance: none
+	font: inherit
+
+	&:focus
+
+		&::-webkit-input-placeholder
+			opacity: 0
+
+		&:-moz-placeholder
+			opacity: 0
+
+		&::-moz-placeholder
+			opacity: 0
+
+		&:-ms-input-placeholder
+			opacity: 0
+
+input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select
+	border-radius: 0
+
+// #{$all-text-inputs}
+
+// 	&:not(.form-control):not(.comment-form__text)
+	
+// 		&::-webkit-input-placeholder
+// 			color: #fff
+// 			opacity: 1
+
+// 		&:-moz-placeholder
+// 			color: #fff
+// 			opacity: 1
+
+// 		&::-moz-placeholder
+// 			color: #fff
+// 			opacity: 1
+
+// 		&:-ms-input-placeholder
+// 			color: #fff
+// 			opacity: 1
+
+*, *:after, *:before
+	box-sizing: border-box
+
+*[v-cloak]
+	display: none
+
+// i.rub
+// 	font-family: "Roboto"
+// 	font-style: normal
+
+@font-face
+	font-family: Montserrat
+	font-style: normal
+	font-weight: 300
+	src: url(../fonts/montserrat-light.woff2) format("woff2")
+	font-display: swap
+
+@font-face
+	font-family: Montserrat
+	font-style: normal
+	font-weight: 400
+	src: url(../fonts/montserrat-regular.woff2) format("woff2")
+	font-display: swap
+
+@font-face
+	font-family: Montserrat
+	font-style: normal
+	font-weight: 700
+	src: url(../fonts/montserrat-bold.woff2) format("woff2")
+	font-display: swap
+
+
+address
+	font-weight: inherit
+
+body
+	min-width: 320px
+	line-height: lh(22, 16)
+	font-family: var(--default-font)
+	font-weight: 400
+	font-size: 16px
+	background: #000
+	color: #fff
+	position: relative
+	left: 0
+	display: flex
+	flex-direction: column
+	width: 100%
+	min-height: 100vh
+	overflow-y: scroll
+
+	&:before
+		content: ""
+		position: fixed 0
+		background: url("../img/main-bg.png") top center no-repeat
+
+select
+	-webkit-appearance: none
+	/* for FF */
+	-moz-appearance: none
+	text-indent: 0.01px
+	text-overflow: ''
+	/* for IE */
+	-ms-appearance: none
+	appearance: none!important
+
+	&::-ms-expand 
+		display: none
+
+.head, .footer
+	flex: none
+
+.head, #content
+	position: relative
+	z-index: 2
+
+#content
+	flex: 1 1 auto
+	// display: flex
+	flex-direction: column
+	transition: transform .8s ease
+	will-change: transform
+	z-index: 2
+
+a
+	color: inherit
+	font-weight: inherit
+	text-decoration: none
+
+	&[href^="tel"], &[href^="mail"]
+		white-space: nowrap
+
+	&:not([class])
+		color: var(--main-color)
+		border-bottom: 1px solid transparent
+
+		&:hover, &:focus
+			border-color: currentColor
+
+.wrapper
+	// width: var(--baseWidth)
+	max-width: var(--base-width)
+	padding: 0 20px
+	margin: 0 auto
+	box-sizing: content-box
+
+input[type="submit"], button
+	cursor: pointer
+
+img, svg
+	max-width: 100%
+
+li
+	list-style: none
