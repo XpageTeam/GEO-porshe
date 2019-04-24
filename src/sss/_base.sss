@@ -116,11 +116,9 @@ body
 	width: 100%
 	min-height: 100vh
 	overflow-y: scroll
-
-	&:before
-		content: ""
-		position: fixed 0
-		background: url("../img/main-bg.png") top center no-repeat
+	background: url("../img/main-bg.png") top center no-repeat, #000
+	background-size: 100% auto
+	background-attachment: fixed
 
 select
 	-webkit-appearance: none

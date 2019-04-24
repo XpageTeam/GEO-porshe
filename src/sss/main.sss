@@ -60,6 +60,12 @@
 			opacity: 1
 			transform: translate3d(0, 0, 0)
 
+		&__text
+
+			i > i
+				opacity: 1
+				filter: none
+
 .first-screen
 	height: 100vh
 	display: flex
@@ -81,6 +87,16 @@
 		margin: vh(108) 0 0
 		padding-left: 60px
 		transition-delay: .3s
+		white-space: nowrap
+
+
+		i
+			font-style: normal
+
+			> i
+				filter: blur(6px)
+				opacity: 0
+				transition: opacity .5s ease, filter .8s ease
 
 		span
 			font-size: 144px
@@ -136,9 +152,11 @@
 		justify-content: center
 		align-items: center
 		border-radius: 5px
+		animation: pulse 2.5s ease infinite
 
 		&:not(:last-child)
 			margin-right: 21px 
+			animation-delay: .5s
 
 .video
 	position: relative
@@ -210,12 +228,12 @@
 		margin: 120px 0 0
 
 	&__img
-		width: calc(47% - 8px)
+		width: calc(49% - 8px)
 		padding-right: 180px
 
 		img
 			display: block
-			width: 100%
+			// width: 100%
 
 	&__text
 		width: calc(53% + 8px)
@@ -223,7 +241,7 @@
 .desc-text
 
 	&__title
-		font-weight: bold
+		font-weight: 400
 		margin-bottom: 78px
 		font-size: 32px
 
@@ -239,6 +257,7 @@
 			line-height: 1
 
 		&-subtitle
+			margin: 6px 0 0
 			color: rgba(255, 255, 255, .3)
 
 .instruments
@@ -248,7 +267,7 @@
 
 	&__title
 		font-size: 32px
-		font-weight: bold
+		font-weight: 400
 
 		&-cont
 			display: flex
@@ -671,3 +690,18 @@
 
 	.instruments-list
 		flex-direction: column
+
+@media (min-width: 1920px)
+	.first-screen
+
+		&__cont
+
+			&:first-child .first-screen
+				padding-bottom: 100px
+
+
+@keyframes pulse
+	0%, 100%
+		transform: scale(1)
+	48%
+		transform: scale(1.1)

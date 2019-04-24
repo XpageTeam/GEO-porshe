@@ -26,9 +26,13 @@ App.domReady(() => {
 		scrollTo(_finalScroll, _duration)
 	}	
 
-	document.addEventListener("mousewheel", onScroll)
-	document.addEventListener("touchmove", onScroll)
-	document.addEventListener("DOMMouseScroll", onScroll)
+	App.each(".first-screen__text i > i", function(el: HTMLElement, i: number){
+		el.style.transitionDelay = `${(i*100)}ms`
+	})
+
+	// document.addEventListener("mousewheel", onScroll)
+	// document.addEventListener("touchmove", onScroll)
+	// document.addEventListener("DOMMouseScroll", onScroll)
 })
 
 App.domReady(() => {
