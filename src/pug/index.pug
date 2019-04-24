@@ -16,7 +16,7 @@ html(lang="ru")
 			setion.first-screen__cont
 				.wrapper
 					.first-screen
-						.first-screen__logos
+						//- .first-screen__logos
 							.logos
 								a.logos__logo(href="#")
 									img(src="img/geo-logo.svg")
@@ -32,7 +32,7 @@ html(lang="ru")
 								i o 
 							span 
 								i 
-									i & 
+									i /
 							i
 								i P
 								i o
@@ -62,23 +62,24 @@ html(lang="ru")
 						figure.about__img
 							img(src="img/about-img.jpg")
 			section.desc__cont
-				.desc
-					figure.desc__img
-						img(src="img/car-img.png")
-					.desc__text
-						.desc-text
-							.desc-text__title Технические характеристики
-							.desc-text__tech
-								.tech
-									.tech__row
-										.tech__row-title 252 л.с./185 кВт
-										.tech__row-subtitle Мощность (л.с.)/Мощность (кВт)
-									.tech__row
-										.tech__row-title 6,7 сек
-										.tech__row-subtitle Разгон 0-100 км/ч
-									.tech__row
-										.tech__row-title 227 км/ч
-										.tech__row-subtitle Максимальная скорость
+				.wrapper
+					.desc
+						figure.desc__img
+							img(src="img/car-img.png")
+						.desc__text
+							.desc-text
+								.desc-text__title Технические характеристики
+								.desc-text__tech
+									.tech
+										.tech__row
+											.tech__row-title 252 л.с./185 кВт
+											.tech__row-subtitle Мощность (л.с.)/Мощность (кВт)
+										.tech__row
+											.tech__row-title 6,7 сек
+											.tech__row-subtitle Разгон 0-100 км/ч
+										.tech__row
+											.tech__row-title 227 км/ч
+											.tech__row-subtitle Максимальная скорость
 			section.instruments__cont
 				.wrapper
 					.instruments
@@ -155,7 +156,7 @@ html(lang="ru")
 								.item__desc
 									.item__desc-top
 										.item__desc-top__title Репортаж
-									.item__desc-title Квартирни В United
+									.item__desc-title Porsche Experience Center Russia
 						each title, i in ["Ведь 5 июля у нас в гостях #FONETICA!", "Егор Крид едет в твой город  с большим концертом! ", "Концерт группировки «Ленинград»", "Влади, Шым, Хамиль и Змей – участники «Касты»", " COMEDY CLUB - 15 лет!"]
 							.events__one
 								a.item(href="#")
@@ -165,6 +166,6 @@ html(lang="ru")
 									.item__desc
 										.item__desc-top
 											.item__desc-top__title Репортаж
-										.item__desc-title Квартирни В United
+										.item__desc-title Porsche Experience Center Russia
 		//- include inc/footer.pug
 		include inc/scripts.pug

@@ -75,10 +75,45 @@
 	text-align: center
 	min-height: 580px
 
+	&__cont
+
+		&:not(:first-child)
+			width: 100%
+			position: relative
+			display: block
+
+			&:before
+				content: ""
+				size: 100% 200vh
+				display: block
+				position: absolute 50% * * 0
+				transform: translateY(-50%)
+				background: url("../img/mid-bg.png") center no-repeat, #000
+				background-size: 100% auto
+				z-index: -1
+
+		&:first-child
+			width: 100%
+			position: relative
+			display: block
+
+			&:before
+				content: ""
+				size: 100%
+				display: block
+				position: absolute 0
+				background: url("../img/main-bg.png") top center no-repeat, #000
+				background-size: 100% auto
+
+			.first-screen
+
+				&__text
+					font-size: 80px
+
 	&__logos, &__text, &__link
-		opacity: 0
+		// opacity: 0
 		transition: transform 1s ease, opacity 1s ease
-		transform: translate3d(0, 130%, 0)
+		// transform: translate3d(0, 130%, 0)
 
 	&__text
 		font-weight: bold
@@ -99,11 +134,12 @@
 				transition: opacity .5s ease, filter .8s ease
 
 		span
-			font-size: 144px
+			font-size: 120px
 			-webkit-text-fill-color: transparent
 			text-fill-color: transparent
 			-webkit-text-stroke: 1px #fff
 			text-stroke: 1px #fff
+			padding: 0 25px 0 15px
 
 	&__link
 		margin: 120px 0 0
@@ -228,8 +264,8 @@
 		margin: 120px 0 0
 
 	&__img
-		width: calc(49% - 8px)
-		padding-right: 180px
+		width: calc(45% - 8px)
+		// padding-right: 180px
 
 		img
 			display: block
