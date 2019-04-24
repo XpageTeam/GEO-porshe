@@ -1,7 +1,8 @@
 require("../sss/main.sss")
 
-import {App, Element} from "./app"
-import {TweenLite} from "gsap"
+import {App, Element, EventListener} from "./app"
+import {TweenLite, Power1} from "gsap"
+// import {Power1} from "../js/EasePack.js"
 require("gsap/ScrollToPlugin.js")
 
 App.domReady(() => {
@@ -12,7 +13,7 @@ App.domReady(() => {
 		$body.addClass("loaded").removeClass("loading")
 	}, 300)
 
-	const _duration = 0.5;
+	const _duration = 0.6;
 	const _distance: number = 200;
 
 	const onScroll = (e: any) => {
@@ -22,17 +23,87 @@ App.domReady(() => {
 		var _scrollTop = window.scrollY;
 		var _finalScroll = _scrollTop - _delta*_distance;
 			
-		TweenLite.to(window, _duration, {
-			scrollTo : {
-				y: _finalScroll,
-				x: 0,
-			},
-			autoKill: true,
-			overwrite: 5							
-		});
+		scrollTo(_finalScroll, _duration)
 	}	
 
 	document.addEventListener("mousewheel", onScroll)
 	document.addEventListener("touchmove", onScroll)
 	document.addEventListener("DOMMouseScroll", onScroll)
 })
+
+App.domReady(() => {
+	const video: HTMLVideoElement = document.querySelector(".video__video"),
+		$video = new Element(".video");
+
+	let curVideoState = "paused";
+
+	new EventListener(".video__play").add("click", (el: HTMLElement, e: Event) => {
+		if (curVideoState == "paused")
+			video.play()
+		else
+			video.pause()
+	})
+
+	new EventListener(video).add("playing", (el: HTMLElement, e: Event) => {
+		$video.addClass("js__playing")
+		curVideoState = "playing"
+	})
+
+	new EventListener(video).add("ended", (el: HTMLElement, e: Event) => {
+		$video.removeClass("js__playing")
+		curVideoState = "paused"
+	})
+
+	new EventListener(video).add("pause", (el: HTMLElement, e: Event) => {
+		$video.removeClass("js__playing")
+		curVideoState = "paused"
+	})
+
+	new EventListener(".watch-link--to-video").add("click", (el: HTMLElement, event: Event) => {
+		event.preventDefault()
+
+		const target: HTMLElement = document.querySelector(".video__cont")
+
+		scrollTo(target.offsetTop, .5)
+
+		setTimeout(function(){
+			video.play()
+		}, 500)
+	})
+})
+
+App.domReady(() => {
+	const $links = new Element(".i-menu__link");
+		// $lists = new Element(".instruments-list")
+
+	new EventListener($links).add("click", (el: HTMLElement, e: Event) => {
+		e.preventDefault();
+
+		const $this = new Element(el);
+
+		if ($this.hasClass("js__active"))
+			return
+
+		const id: string = el.getAttribute("data-id");
+
+		$links.removeClass("js__active")
+
+		new Element(".instruments-list.js__active").removeClass("js__active")
+
+		new Element(`.instruments-list[data-id='${id}']`).addClass("js__active")
+
+		$this.addClass("js__active")
+	})
+})
+
+const scrollTo = (distance: number, duration: number = .7) => {
+	TweenLite.to(window, duration, {
+		scrollTo : {
+			y: distance,
+			x: 0,
+		},
+		ease: Power1.easeOut,
+		autoKill: true,
+		overwrite: 5							
+	});
+}

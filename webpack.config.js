@@ -145,6 +145,10 @@ module.exports = {
 			from: 'src/fonts/',
 			to: path.resolve(__dirname, "docs/fonts")
 		}]),
+		new CopyWebpackPlugin([{
+			from: 'src/video/',
+			to: path.resolve(__dirname, "docs/video")
+		}]),
 		// new CopyWebpackPlugin([{
 		// 	from: 'src/img/src',
 		// 	to: path.resolve(__dirname, "docs/img")

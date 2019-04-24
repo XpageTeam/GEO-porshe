@@ -26,7 +26,129 @@ html(lang="ru")
 							span  & 
 							| Porsche
 						.first-screen__link 
-							a.watch-link(href="#") 
+							a.watch-link.watch-link--to-video(href="#") 
 								span Смотерть видео
+			section.video__cont
+				.wrapper
+					.video
+						video.video__video(src="video/video.mp4" poster="img/video-poster.jpg")
+						.video__play
+							button.play-btn
+			section.about__cont
+				.wrapper
+					.about
+						.about__text
+							.about-text
+								.about-text__title Новый Macan
+								.about-text__text
+									.text-page
+										p Мы доказали, что не признаём никакого диктата. И не следуем тенденциям. Мы предпочитаем сами писать историю своих приключений. Так, как это делает компактный SUV,  сочетающий в себе спортивный стиль, качественный дизайн и полную пригодность к повседневной эксплуатации - новый Macan.
+						figure.about__img
+							img(src="img/about-img.jpg")
+			section.desc__cont
+				.desc
+					figure.desc__img
+						img(src="img/car-img.png")
+					.desc__text
+						.desc-text
+							.desc-text__title Технические характеристики
+							.desc-text__tech
+								.tech
+									.tech__row
+										.tech__row-title 252 л.с./185 кВт
+										.tech__row-subtitle Мощность (л.с.)/Мощность (кВт)
+									.tech__row
+										.tech__row-title 6,7 сек
+										.tech__row-subtitle Разгон 0-100 км/ч
+									.tech__row
+										.tech__row-title 227 км/ч
+										.tech__row-subtitle Максимальная скорость
+			section.instruments__cont
+				.wrapper
+					.instruments
+						.instruments__title-cont
+							.instruments__title Оснащение
+							nav.instruments__menu
+								ul.i-menu
+									li
+										a.i-menu__link(href="#" data-id="0") Дизайн кузова
+									li
+										a.i-menu__link.js__active(href="#" data-id="1") Дизайн салона
+									li
+										a.i-menu__link(href="#" data-id="2") Динамика и управляемость
+									li
+										a.i-menu__link(href="#" data-id="3") Компфорт
+						.instruments__list
+							- for (let i = 0; i < 4; i++)
+								if (i == 1)
+									.instruments-list.js__active(data-id=i)
+										.instruments-list__item
+											figure
+												img(src="img/salon-0.jpg")
+										.instruments-list__item
+											figure
+												img(src="img/salon-1.jpg")
+										.instruments-list__item
+											figure
+												img(src="img/salon-2.jpg")
+								else
+									.instruments-list(data-id=i)
+										.instruments-list__item
+											figure
+												img(src="img/salon-0.jpg")
+										.instruments-list__item
+											figure
+												img(src="img/salon-1.jpg")
+										.instruments-list__item
+											figure
+												img(src="img/salon-2.jpg")
+			section.about__cont
+				.wrapper
+					.about
+						.about__text
+							.about-text
+								.about-text__title Жажда новых
+									br
+									| открытий
+								.about-text__text
+									.text-page
+										p Постоянное движение. Биение пульса задаёт такт. Первый аккорд заставляет дрожать весь мир. Звук проникает в каждую клеточку. Ощущение энергии. И выражение нестандартного стиля жизни. Два первоклассных артиста берут тебя с собой в этот мир. Ваш спутник - новый Macan.
+						figure.about__img
+							img(src="img/about-img-2.jpg")
+			setion.first-screen__cont
+				.wrapper
+					.first-screen.first-screen--titles
+						.first-screen__title
+							.first-screen__link 
+								a.watch-link(href="#") 
+									span Записаться
+							.first-screen__text На тест-драйв
+						.first-screen__title
+							.first-screen__link 
+								a.watch-link(href="#") 
+									span Узнать больше
+							.first-screen__text О Porsche
+			section.events__cont
+				.wrapper
+					.events
+						.events__one.events__one--big
+							a.item(href="#")
+								.item__event 8 марта
+								figure.item__img
+									img(src="img/e-1.jpg")
+								.item__desc
+									.item__desc-top
+										.item__desc-top__title Репортаж
+									.item__desc-title Квартирни В United
+						each title, i in ["Ведь 5 июля у нас в гостях #FONETICA!", "Егор Крид едет в твой город  с большим концертом! ", "Концерт группировки «Ленинград»", "Влади, Шым, Хамиль и Змей – участники «Касты»", " COMEDY CLUB - 15 лет!"]
+							.events__one
+								a.item(href="#")
+									.item__event 8 марта
+									figure.item__img
+										img(src="img/e-"+(i+2)+".jpg")
+									.item__desc
+										.item__desc-top
+											.item__desc-top__title Репортаж
+										.item__desc-title Квартирни В United
 		//- include inc/footer.pug
 		include inc/scripts.pug
