@@ -31,7 +31,7 @@ App.domReady(() => {
 	})
 
 	document.addEventListener("mousewheel", onScroll)
-	document.addEventListener("touchmove", onScroll)
+	//document.addEventListener("touchmove", onScroll)
 	document.addEventListener("DOMMouseScroll", onScroll)
 })
 
