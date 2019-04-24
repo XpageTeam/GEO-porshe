@@ -30,9 +30,9 @@ App.domReady(() => {
 		el.style.transitionDelay = `${(i*100)}ms`
 	})
 
-	// document.addEventListener("mousewheel", onScroll)
-	// document.addEventListener("touchmove", onScroll)
-	// document.addEventListener("DOMMouseScroll", onScroll)
+	document.addEventListener("mousewheel", onScroll)
+	document.addEventListener("touchmove", onScroll)
+	document.addEventListener("DOMMouseScroll", onScroll)
 })
 
 App.domReady(() => {
