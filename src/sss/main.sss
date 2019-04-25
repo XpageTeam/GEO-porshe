@@ -728,7 +728,15 @@
 
 	.events
 		grid-template-columns: repeat(2, 1fr)
+	
+	.first-screen
 
+		&__bg
+			background: url("../img/top-bg.jpg") center no-repeat
+			background-size: cover !important
+
+			img
+				opacity: 0 !important
 
 @media (max-width: 660px)
 	.head
@@ -769,7 +777,7 @@
 
 		&__text
 			margin: 5vh 0 0
-			font-size: 42px
+			font-size: 42px !important
 
 			span
 				font-size: 56px
