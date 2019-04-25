@@ -4,6 +4,10 @@
 @import "_base.sss"
 @import "_text-styles.sss"
 
+.string
+	transition: transform .3s ease, opacity .3s ease
+	opacity: 0
+
 .back, .test
 	
 	&-btn
@@ -52,7 +56,8 @@
 		max-width: calc(1722px + 40px)
 		width: 100%
 
-.loaded
+
+.loaded .first-screen__cont:first-child, .first-screen__cont.js__scrolled
 
 	.first-screen
 
@@ -66,6 +71,11 @@
 				opacity: 1
 				filter: none
 
+		&__bg
+			opacity: 1 !important
+			perspective: 800px
+			transform-style: preserve-3d
+
 .first-screen
 	height: 100vh
 	display: flex
@@ -76,44 +86,62 @@
 	min-height: 580px
 
 	&__cont
+		width: 100%
+		position: relative
+		display: block
+
+		&.js__scrolled
+
+			&:not(:first-child)
+				opacity: 1
+				transform: translate3d(0, -10%, 0)
+
+		// &:before
+		// 	content: ""
+		// 	size: 100%
+		// 	display: block
+		// 	position: absolute 0
+		// 	background: url("../img/top-bg.jpg") center no-repeat, #000
+		// 	background-size: 100% auto
 
 		&:not(:first-child)
-			width: 100%
-			position: relative
-			display: block
+			opacity: 0
+			transition: transform .6s ease, opacity .5s ease
 
-			&:before
-				content: ""
-				size: 100% 200vh
-				display: block
-				position: absolute 50% * * 0
-				transform: translateY(-50%)
-				background: url("../img/mid-bg.png") center no-repeat, #000
-				background-size: 100% auto
+		.first-screen
+
+			&__bg
+				position: absolute 0
+				display: flex
+				justify-content: center
+				align-items: center
+				transform-style: preserve-3d
+				// overflow-x: hidden
+				transform: scale(1.1)
 				z-index: -1
 
-		&:first-child
-			width: 100%
+				opacity: 0
+				transition: opacity .3s ease
+
+				img
+					display: block
+					width: 120%
+					max-width: none
+					transform-style: preserve-3d
+
+			&__text
+				font-size: 80px
+
+		.wrapper
 			position: relative
-			display: block
-
-			&:before
-				content: ""
-				size: 100%
-				display: block
-				position: absolute 0
-				background: url("../img/main-bg.png") top center no-repeat, #000
-				background-size: 100% auto
-
-			.first-screen
-
-				&__text
-					font-size: 80px
+			z-index: 20
+			transform-style: preserve-3d
 
 	&__logos, &__text, &__link
 		// opacity: 0
 		transition: transform 1s ease, opacity 1s ease
 		// transform: translate3d(0, 130%, 0)
+		z-index: 10
 
 	&__text
 		font-weight: bold
@@ -237,9 +265,24 @@
 
 	&__cont
 		padding: 40px 0
+		position: relative
+		z-index: 2
+
+		&.js__scrolled
+
+			.about__img
+				opacity: 1
+
+			.about-text
+
+				.string
+					opacity: 1
+					transform: none !important
 
 	&__img
 		flex: none
+		transition: opacity .3s ease
+		opacity: 0
 
 		img
 			width: 100%
@@ -263,9 +306,18 @@
 	&__cont
 		margin: 120px 0 0
 
+		&.js__scrolled
+
+			.desc-text__title, .tech__row, .desc__img
+				opacity: 1
+				transform: none !important
+
 	&__img
 		width: calc(45% - 8px)
 		// padding-right: 180px
+		transition: transform .3s ease, opacity .3s ease
+		opacity: 0
+		transform: translate3d(-30px,0,0)
 
 		img
 			display: block
@@ -280,10 +332,25 @@
 		font-weight: 400
 		margin-bottom: 78px
 		font-size: 32px
+		transition: transform .3s ease, opacity .3s ease
+		opacity: 0
+		transform: translate3d(0,20px,0)
 
 .tech
 
 	&__row
+		transition: transform .3s ease, opacity .3s ease
+		opacity: 0
+		transform: translate3d(0,20px,0)
+
+		&:first-child
+			transition-delay: .3s
+
+		&:nth-child(2)
+			transition-delay: .6s
+
+		&:nth-child(3)
+			transition-delay: .9s
 
 		&:not(:first-child)
 			margin: 60px 0 0
@@ -376,13 +443,34 @@
 	grid-gap: rem(32) rem(30)
 
 	&__one
+		opacity: 0
+		transition: transform .7s ease, opacity .3s ease
+		transform: translate3d(0, 20%, 0)
 
 		&--big
 			grid-row: span 2
 			grid-column: span 2
 
+		&:nth-child(2)
+			transition-delay: .3s
+		&:nth-child(3)
+			transition-delay: .4s
+		&:nth-child(4)
+			transition-delay: .5s
+		&:nth-child(5)
+			transition-delay: .6s
+		&:nth-child(6)
+			transition-delay: .7s
+
 	&__cont
 		margin: 0 0 150px
+		
+		&.js__scrolled
+
+			.events__one
+				opacity: 1
+				transform: none
+
 
 .item
 	color: #fff

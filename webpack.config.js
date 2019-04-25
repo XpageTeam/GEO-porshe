@@ -21,6 +21,7 @@ pages.forEach(function (file) {
 
 module.exports = {
 	entry: {
+		vendors: "./src/js/common.js",
 		common: "./src/ts/common.ts",
 		// "main-page": "./src/ts/main-page.ts",
 	},
