@@ -4,6 +4,23 @@
 @import "_base.sss"
 @import "_text-styles.sss"
 
+
+.loader
+	position: fixed
+	top: 0
+	left: 0
+	height: 4px
+	transition: transform 28s 
+	transform: scaleX(0)
+	transform-origin: left
+	background: #fff
+	z-index: 9999999999
+
+.loaded
+	.loader
+		transform: scaleX(1)
+		width: 100%
+
 .string
 	transition: transform .3s ease, opacity .3s ease
 	opacity: 0
@@ -55,26 +72,71 @@
 		align-items: center
 		max-width: calc(1722px + 40px)
 		width: 100%
+		opacity: 0
+		transition-delay: 2s
+		transition: opacity .3s ease 
+
+// .first-screen__link
+// 	opacity: 0
+// 	// transition-delay: 10s
+
+.loaded
+
+	.first-screen__cont:first-child, .first-screen__cont.js__scrolled
+
+		.first-screen
+
+			&__logos, &__text, &__link
+				opacity: 1
+				transform: translate3d(0, 0, 0)
+
+			// &__text
+
+			// 	i > i
+			// 		opacity: 1
+			// 		filter: none
+
+			&__bg
+				opacity: 1 !important
+				perspective: 800px
+				transform-style: preserve-3d
+				transition-delay: 3s
 
 
-.loaded .first-screen__cont:first-child, .first-screen__cont.js__scrolled
+
+
+.loaded-1
 
 	.first-screen
 
-		&__logos, &__text, &__link
-			opacity: 1
-			transform: translate3d(0, 0, 0)
 
 		&__text
-
-			i > i
+			
+			i:nth-child(1) > i
 				opacity: 1
 				filter: none
 
-		&__bg
-			opacity: 1 !important
-			perspective: 800px
-			transform-style: preserve-3d
+.loaded-2
+
+	.first-screen
+
+
+		&__text
+			i:nth-child(3) > i
+				opacity: 1
+				filter: none
+
+	.first-screen__link
+		opacity: 1
+
+	
+
+.loaded-3
+	.first-screen__link
+		opacity: 1 !important
+	
+	.head__wrapper
+		opacity: 1
 
 .first-screen
 	height: 100vh
@@ -161,6 +223,7 @@
 				opacity: 0
 				transition: opacity .5s ease, filter .8s ease
 
+
 		span
 			font-size: 120px
 			-webkit-text-fill-color: transparent
@@ -171,7 +234,7 @@
 
 	&__link
 		margin: 120px 0 0
-		transition-delay: .6s
+		opacity: 0 !important
 
 	&--titles
 		min-height: 100vh

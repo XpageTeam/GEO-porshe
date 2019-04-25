@@ -6,6 +6,7 @@ html(lang="ru")
 		include inc/css.pug
 	body.main.loading
 		//- include inc/header.pug
+		.loader
 		header.head
 			.head__wrapper
 				.head__back
@@ -13,6 +14,7 @@ html(lang="ru")
 				.head__btn
 					a.test-btn(href="#") Тест-драйв
 		main#content
+			audio(src="img/audio.Mp3"  controls)
 			setion.first-screen__cont
 				figure.first-screen__bg
 					img(src="img/top-bg.jpg")

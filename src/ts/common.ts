@@ -13,6 +13,18 @@ App.domReady(() => {
 		$body.addClass("loaded").removeClass("loading")
 	}, 300)
 
+	setTimeout(function(){
+		$body.addClass("loaded-1")
+	}, 6000)
+
+	setTimeout(function(){
+		$body.addClass("loaded-2")
+	}, 8500)
+
+	setTimeout(function(){
+		$body.addClass("loaded-3")
+	}, 10000)
+
 	const _duration = 0.6;
 	const _distance: number = 200;
 
