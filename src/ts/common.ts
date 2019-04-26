@@ -69,6 +69,7 @@ App.domReady(() => {
 	})
 
 	document.addEventListener("click", function(){
+		audio.load()
 		audio.play()
 	},{
 		once: true
