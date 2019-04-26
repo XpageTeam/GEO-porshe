@@ -10,6 +10,18 @@ require("gsap/ScrollToPlugin.js")
 App.domReady(() => {
 
 	const $body = new Element("body");
+	const $audio = new Element("audio");
+	const $headphonePlay = new Element(".headphone-play");
+
+	// new EventListener(".headphone-play, .headphone-cont").add("click", (el: HTMLElement, e: Event) => {
+	// 	$body.removeClass("animation-stop");
+
+	// })
+
+	var a = document.querySelector('audio');
+
+	if(window.innerWidth < 660)
+		a.remove();
 
 	setTimeout(function(){
 		$body.addClass("loaded").removeClass("loading")
@@ -26,6 +38,12 @@ App.domReady(() => {
 	setTimeout(function(){
 		$body.addClass("loaded-3")
 	}, 10000)
+
+
+
+
+
+
 
 	const _duration = 0.6;
 	const _distance: number = 200;
@@ -47,6 +65,8 @@ App.domReady(() => {
 	document.addEventListener("mousewheel", onScroll)
 	//document.addEventListener("touchmove", onScroll)
 	document.addEventListener("DOMMouseScroll", onScroll)
+
+
 })
 
 App.domReady(() => {

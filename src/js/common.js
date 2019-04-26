@@ -2,6 +2,14 @@ import $ from "jquery"
 import stringEffect from "../js/stringAnimate.js"
 
 document.addEventListener("DOMContentLoaded", e => {
+
+	$(".headphone-play").click(function(){
+
+		$('body').removeClass('animation-stop');	
+
+	})
+
+
 	$(".about-text__title, .about-text__text .text-page p").each((i, el) => {
 		new stringEffect({
 			selector: el,

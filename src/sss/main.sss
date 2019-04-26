@@ -4,10 +4,42 @@
 @import "_base.sss"
 @import "_text-styles.sss"
 
-.bx-chrome
-	audio
-		display: none !important
+
+.headphone
+
+	&-cont
+		display: none
 		
+// .animation-stop
+.loader
+	transform: scaleX(0) !important
+
+.headphone
+
+	text-align: center
+
+	&-cont
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: #000
+		z-index: 99999
+
+		display: flex 
+		justify-content: center
+		align-items: center
+
+	&-text
+		margin-top: 20px
+
+	&-play
+		padding: 10px 25px
+		border: 1px solid #fff
+		margin-top: 30px
+		cursor: pointer
+
 .loader
 	position: fixed
 	top: 0

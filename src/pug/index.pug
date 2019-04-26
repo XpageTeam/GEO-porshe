@@ -4,9 +4,16 @@ html(lang="ru")
 		title Главная
 		include inc/head.pug
 		include inc/css.pug
-	body.main.loading
+	body.main.loading.animation-stop
 		//- include inc/header.pug
 		.loader
+		.headphone-cont
+			.headphone
+				.ico-headpgone
+					include ../img/headphones.svg
+				.headphone-text Включите звук
+				.headphone-play Продолжить
+
 		header.head
 			.head__wrapper
 				.head__back
