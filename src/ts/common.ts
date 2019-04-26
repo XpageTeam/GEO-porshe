@@ -48,6 +48,9 @@ App.domReady(() => {
 })
 
 App.domReady(() => {
+	const audio: HTMLVideoElement = document.querySelector(".audio"),
+		$audio = new Element("audio");
+
 	const video: HTMLVideoElement = document.querySelector(".video__video"),
 		$video = new Element(".video");
 
@@ -59,6 +62,8 @@ App.domReady(() => {
 		else
 			video.pause()
 	})
+
+	
 
 	new EventListener(video).add("playing", (el: HTMLElement, e: Event) => {
 		$video.addClass("js__playing")
@@ -84,8 +89,22 @@ App.domReady(() => {
 
 		setTimeout(function(){
 			video.play()
+			audio.pause()
 		}, 500)
 	})
+
+
+	new EventListener(".first-screen__cont .watch-link:not(.watch-link--to-video").add("click", (el: HTMLElement, event: Event) => {
+		event.preventDefault()
+
+		const target: HTMLElement = document.querySelector(".events__cont")
+
+		scrollTo(target.offsetTop, .5)
+
+
+	})
+
+
 })
 
 App.domReady(() => {

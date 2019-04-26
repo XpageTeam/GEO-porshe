@@ -83,6 +83,7 @@
 .loaded
 
 	.first-screen__cont:first-child, .first-screen__cont.js__scrolled
+	// .first-screen__cont:first-child
 
 		.first-screen
 
@@ -106,34 +107,37 @@
 
 
 .loaded-1
+	.first-screen__cont:first-child
 
-	.first-screen
+		.first-screen
 
 
-		&__text
-			
-			i:nth-child(1) > i
-				opacity: 1
-				filter: none
+			&__text
+				
+				i:nth-child(1) > i
+					opacity: 1
+					filter: none
 
 .loaded-2
+	.first-screen__cont:first-child
 
-	.first-screen
+		.first-screen
 
 
-		&__text
-			i:nth-child(3) > i
-				opacity: 1
-				filter: none
+			&__text
+				i:nth-child(3) > i
+					opacity: 1
+					filter: none
 
-	.first-screen__link
-		opacity: 1
+		.first-screen__link
+			opacity: 1
 
 	
 
 .loaded-3
-	.first-screen__link
-		opacity: 1 !important
+	.first-screen__cont:first-child
+		.first-screen__link
+			opacity: 1 !important
 	
 	.head__wrapper
 		opacity: 1
@@ -155,8 +159,27 @@
 		&.js__scrolled
 
 			&:not(:first-child)
-				opacity: 1
+				opacity: 1 !important
 				transform: translate3d(0, -10%, 0)
+
+				.first-screen__link
+					opacity: 1 !important
+
+
+				.first-screen
+
+					&__logos, &__text, &__link
+						opacity: 1
+						transform: translate3d(0, 0, 0)
+
+					&__bg
+						transition-delay: initial !important
+
+					&__text
+
+						i > i
+							opacity: 1
+							filter: none
 
 		// &:before
 		// 	content: ""
@@ -167,8 +190,11 @@
 		// 	background-size: 100% auto
 
 		&:not(:first-child)
-			opacity: 0
+			opacity: 1 !important
 			transition: transform .6s ease, opacity .5s ease
+
+			.first-screen__link
+				transition-delay: 3s
 
 		.first-screen
 
@@ -848,6 +874,20 @@
 		&__link
 			margin: 35px 0 0
 
+
+		&__cont
+			&:not(:first-child)
+				.first-screen
+					&__text
+						margin: 2vh 0 0
+						font-size: 22px!important
+
+
+					&--titles 
+						.first-screen__title:not(:first-child)
+							margin: 40px 0 0
+
+
 	.video
 
 		&__cont
@@ -885,6 +925,28 @@
 
 	.instruments-list
 		flex-direction: column
+
+
+@media screen and (max-width: 370px)
+	
+	.first-screen__text
+		margin: 3vh 0 0
+		font-size: 30px!important
+
+		span
+			font-size: 27px
+
+	.item__desc
+		padding: 10px
+
+		&-top
+			margin: 9px 0 0
+
+	.item__event
+		top: 10px
+		left: 10px
+
+
 
 @media (min-width: 1920px)
 	.first-screen
