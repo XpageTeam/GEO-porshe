@@ -1,7 +1,26 @@
 import $ from "jquery"
 import stringEffect from "../js/stringAnimate.js"
+import is from "is_js"
+
+window.is = is;
 
 document.addEventListener("DOMContentLoaded", e => {
+
+	const $body = $("body");
+
+	setTimeout(function(){
+		$body.addClass("loaded-1")
+	}, !is.safari() ? 6000 : 3000)
+
+	setTimeout(function(){
+		$body.addClass("loaded-2")
+	}, !is.safari() ? 8500 : 4000)
+
+	setTimeout(function(){
+		$body.addClass("loaded-3")
+	}, !is.safari() ? 10000 : 5000)
+
+
 	$(".about-text__title, .about-text__text .text-page p").each((i, el) => {
 		new stringEffect({
 			selector: el,

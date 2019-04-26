@@ -5,7 +5,11 @@ import {TweenLite, Power1} from "gsap"
 // import {Power1} from "../js/EasePack.js"
 require("gsap/ScrollToPlugin.js")
 
+declare global {
+    interface Window { is: any; }
+}
 
+window.is = window.is || {};
 
 App.domReady(() => {
 
@@ -14,18 +18,6 @@ App.domReady(() => {
 	setTimeout(function(){
 		$body.addClass("loaded").removeClass("loading")
 	}, 300)
-
-	setTimeout(function(){
-		$body.addClass("loaded-1")
-	}, 6000)
-
-	setTimeout(function(){
-		$body.addClass("loaded-2")
-	}, 8500)
-
-	setTimeout(function(){
-		$body.addClass("loaded-3")
-	}, 10000)
 
 	const _duration = 0.6;
 	const _distance: number = 200;
@@ -44,9 +36,11 @@ App.domReady(() => {
 		el.style.transitionDelay = `${(i*100)}ms`
 	})
 
-	document.addEventListener("mousewheel", onScroll)
-	//document.addEventListener("touchmove", onScroll)
-	document.addEventListener("DOMMouseScroll", onScroll)
+	if (!window.is.safari()){
+		document.addEventListener("mousewheel", onScroll)
+		//document.addEventListener("touchmove", onScroll)
+		document.addEventListener("DOMMouseScroll", onScroll)
+	}
 })
 
 App.domReady(() => {
@@ -60,36 +54,42 @@ App.domReady(() => {
 
 	new EventListener(".video__play").add("click", (el: HTMLElement, e: Event) => {
 		if (curVideoState == "paused"){
+			if (!window.is.safari())
+				audio.pause()	
 			video.play()
-			audio.pause()
 		}else{
 			video.pause()
-			audio.play()
+			if (!window.is.safari())
+				audio.play()
 		}
 	})
 
-	document.addEventListener("click", function(){
-		audio.load()
-		audio.play()
-	},{
-		once: true
-	})
+	if (!window.is.safari())
+		document.addEventListener("click", function(){
+			audio.load()
+			audio.play()
+		},{
+			once: true
+		})
 
-	document.addEventListener("touchmove", function(){
-		audio.play()
-	},{
-		once: true
-	})
+	if (!window.is.safari())
+		document.addEventListener("touchmove", function(){
+			audio.play()
+		},{
+			once: true
+		})
 
-	document.addEventListener("scroll", function(){
-		audio.play()
-	},{
-		once: true
-	})
+	if (!window.is.safari())
+		document.addEventListener("scroll", function(){
+			audio.play()
+		},{
+			once: true
+		})
 
 	new EventListener(video).add("playing", (el: HTMLElement, e: Event) => {
 		$video.addClass("js__playing")
-		audio.pause()
+		if (!window.is.safari())
+			audio.pause()
 		curVideoState = "playing"
 	})
 
@@ -112,7 +112,8 @@ App.domReady(() => {
 
 		setTimeout(function(){
 			video.play()
-			audio.pause()
+			if (!window.is.safari())
+				audio.pause()
 		}, 500)
 	})
 
