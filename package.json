@@ -58,5 +58,8 @@
   "browserslist": [
     "> 1%",
     "last 2 version"
-  ]
+  ],
+  "dependencies": {
+    "is_js": "^0.9.0"
+  }
 }
