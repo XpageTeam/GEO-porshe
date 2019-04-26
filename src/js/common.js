@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", e => {
 		if (isScrolledIntoView(this))
 			$(this).addClass("js__scrolled")
 
-		console.log($(".about__cont:not(:nth-child(3))").offset().top - $(window).scrollTop() - 40)
-
 		if ($(".about__cont:not(:nth-child(3))").offset().top - $(window).scrollTop() - $(window).height() - 40 < 0){
 			$(".first-screen__cont:not(:first-child)").addClass("js__scrolled")
 			if (!window.matchMedia("(max-width: 1000px)").matches)
@@ -29,8 +27,6 @@ document.addEventListener("DOMContentLoaded", e => {
 			if (isScrolledIntoView(this))
 				$(this).addClass("js__scrolled")
 		})
-
-		console.log($(".about__cont:not(:nth-child(3))").offset().top - $(window).scrollTop() - 40)
 
 		if ($(".about__cont:not(:nth-child(3))").offset().top - $(window).scrollTop()- 40 < 0){
 			$(".first-screen__cont:not(:first-child)").addClass("js__scrolled")

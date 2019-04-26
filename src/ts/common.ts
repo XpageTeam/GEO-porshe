@@ -59,16 +59,36 @@ App.domReady(() => {
 	let curVideoState = "paused";
 
 	new EventListener(".video__play").add("click", (el: HTMLElement, e: Event) => {
-		if (curVideoState == "paused")
+		if (curVideoState == "paused"){
 			video.play()
-		else
+			audio.pause()
+		}else{
 			video.pause()
+			audio.play()
+		}
 	})
 
-	
+	document.addEventListener("click", function(){
+		audio.play()
+	},{
+		once: true
+	})
+
+	document.addEventListener("touchmove", function(){
+		audio.play()
+	},{
+		once: true
+	})
+
+	document.addEventListener("scroll", function(){
+		audio.play()
+	},{
+		once: true
+	})
 
 	new EventListener(video).add("playing", (el: HTMLElement, e: Event) => {
 		$video.addClass("js__playing")
+		audio.pause()
 		curVideoState = "playing"
 	})
 
