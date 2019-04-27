@@ -50,13 +50,15 @@
 			content: ""
 
 .test-btn
-	padding: 18px 27px 19px 57px
+	padding: 18px 27px 19px
+	background: #4BB3CA
+	border: 0
 
-	&:before
-		background: url("../img/ico-circle.svg") center no-repeat
-		size: 13px 12px
-		top: calc(50% - 6px)
-		left: 25px
+	// &:before
+	// 	background: url("../img/ico-circle.svg") center no-repeat
+	// 	size: 13px 12px
+	// 	top: calc(50% - 6px)
+	// 	left: 25px
 
 .back-btn
 	padding: 18px 21px 19px  48px
@@ -79,7 +81,7 @@
 		padding: 87px 20px 20px
 		display: flex
 		justify-content: space-between
-		align-items: center
+		align-items: flex-end
 		max-width: calc(1722px + 40px)
 		width: 100%
 		opacity: 0
@@ -845,6 +847,7 @@
 			// display: block
 			padding: 0 20px
 
+
 			a
 				// display: block
 				font-size: 0
@@ -852,12 +855,15 @@
 				size: 30px
 			
 			.test-btn
+				font-size: rem(14)
+				size: auto
+				padding: 5px 15px	
 
-				&:before
-					size: 15px
-					top: calc(50% - 7px)
-					left: calc(50% - 7px)
-					background-position: center
+				// &:before
+				// 	size: 15px
+				// 	top: calc(50% - 7px)
+				// 	left: calc(50% - 7px)
+				// 	background-position: center
 			
 			.back-btn
 
