@@ -7,6 +7,13 @@
 .bx-chrome
 	audio
 		display: none !important
+
+.bx-mac, .bx-ios
+
+	.first-screen__text i > i
+		filter: none !important
+		// opacity: 1 !important
+		transition-delay: 0s !important
 		
 .loader
 	position: fixed
@@ -104,7 +111,7 @@
 				opacity: 1 !important
 				perspective: 800px
 				transform-style: preserve-3d
-				transition-delay: 3s
+				transition-delay: 2s
 
 
 
@@ -197,7 +204,7 @@
 			transition: transform .6s ease, opacity .5s ease
 
 			.first-screen__link
-				transition-delay: 3s
+				transition-delay: 1.5s
 
 		.first-screen
 

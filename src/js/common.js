@@ -10,15 +10,15 @@ document.addEventListener("DOMContentLoaded", e => {
 
 	setTimeout(function(){
 		$body.addClass("loaded-1")
-	}, !is.safari() ? 6000 : 3000)
+	}, !is.safari() ? 6000 : 2600)
 
 	setTimeout(function(){
 		$body.addClass("loaded-2")
-	}, !is.safari() ? 8500 : 4000)
+	}, !is.safari() ? 8500 : 3300)
 
 	setTimeout(function(){
 		$body.addClass("loaded-3")
-	}, !is.safari() ? 10000 : 5000)
+	}, !is.safari() ? 10000 : 4000)
 
 
 	$(".about-text__title, .about-text__text .text-page p").each((i, el) => {

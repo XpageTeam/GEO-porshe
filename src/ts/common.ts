@@ -159,6 +159,7 @@ App.domReady(() => {
 	const main = document.querySelector(".first-screen__cont");
 	const sheetsSvg = document.querySelector(".first-screen__bg img");
 
+	if (!window.is.safari())
 	main.addEventListener("mousemove", (e: any) => {
 		let pos = {x: 0, y: 0};
 
@@ -169,9 +170,9 @@ App.domReady(() => {
 	    TweenLite.to(sheetsSvg, 1, {
 	    	x: pos.x,
 	    	y: pos.y,
-	    	rotationY: (e.pageX > window.innerWidth / 2) ? pos.x / 15 * - 1 : pos.x / 15,
-	    	rotationX: (e.pageY > window.innerHeight / 2) ? pos.y / 15 * - 1 : pos.y / 15,
-	    	z: pos.y,
+	    	rotationY: !window.is.safari() ? (e.pageX > window.innerWidth / 2) ? pos.x / 15 * - 1 : pos.x / 15 : 0,
+	    	rotationX: !window.is.safari() ? (e.pageY > window.innerHeight / 2) ? pos.y / 15 * - 1 : pos.y / 15 : 0,
+	    	z: !window.is.safari() ? pos.y : 0,
 	    	ease: Power1.easeOut,
 	    })
 	})
