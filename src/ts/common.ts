@@ -118,13 +118,12 @@ App.domReady(() => {
 	})
 
 
-	new EventListener(".first-screen__cont .watch-link:not(.watch-link--to-video").add("click", (el: HTMLElement, event: Event) => {
+	new EventListener(".first-screen__title.more .watch-link").add("click", (el: HTMLElement, event: Event) => {
 		event.preventDefault()
 
 		const target: HTMLElement = document.querySelector(".events__cont")
 
 		scrollTo(target.offsetTop, .5)
-
 
 	})
 
