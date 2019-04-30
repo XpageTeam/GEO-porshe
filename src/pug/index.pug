@@ -48,6 +48,29 @@ html(lang="ru")
 						.first-screen__link 
 							a.watch-link.watch-link--to-video(href="#") 
 								span Смотреть видео
+
+			section.events__cont
+				.wrapper
+					.events
+						.events__one.events__one--big
+							a.item(href="#")
+								.item__event 8 марта
+								figure.item__img
+									img(src="img/e-1.jpg")
+								.item__desc
+									.item__desc-top
+										.item__desc-top__title Репортаж
+									.item__desc-title Porsche Experience Center Russia
+						each title, i in ["Ведь 5 июля у нас в гостях #FONETICA!", "Егор Крид едет в твой город  с большим концертом! ", "Концерт группировки «Ленинград»", "Влади, Шым, Хамиль и Змей – участники «Касты»", " COMEDY CLUB - 15 лет!"]
+							.events__one
+								a.item(href="#")
+									.item__event 8 марта
+									figure.item__img
+										img(src="img/e-"+(i+2)+".jpg")
+									.item__desc
+										.item__desc-top
+											.item__desc-top__title Репортаж
+										.item__desc-title Porsche Experience Center Russia
 			section.video__cont
 				.wrapper
 					.video
@@ -173,28 +196,7 @@ html(lang="ru")
 									i c
 									i h
 									i e
-			section.events__cont
-				.wrapper
-					.events
-						.events__one.events__one--big
-							a.item(href="#")
-								.item__event 8 марта
-								figure.item__img
-									img(src="img/e-1.jpg")
-								.item__desc
-									.item__desc-top
-										.item__desc-top__title Репортаж
-									.item__desc-title Porsche Experience Center Russia
-						each title, i in ["Ведь 5 июля у нас в гостях #FONETICA!", "Егор Крид едет в твой город  с большим концертом! ", "Концерт группировки «Ленинград»", "Влади, Шым, Хамиль и Змей – участники «Касты»", " COMEDY CLUB - 15 лет!"]
-							.events__one
-								a.item(href="#")
-									.item__event 8 марта
-									figure.item__img
-										img(src="img/e-"+(i+2)+".jpg")
-									.item__desc
-										.item__desc-top
-											.item__desc-top__title Репортаж
-										.item__desc-title Porsche Experience Center Russia
+			
 			audio(src="img/audio.Mp3").audio
 		//- include inc/footer.pug
 		include inc/scripts.pug

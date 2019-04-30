@@ -31,13 +31,13 @@ document.addEventListener("DOMContentLoaded", e => {
 		if (isScrolledIntoView(this))
 			$(this).addClass("js__scrolled")
 
-		if ($(".about__cont:not(:nth-child(3))").offset().top - $(window).scrollTop() - $(window).height() - 40 < 0){
+		if ($(".about__cont:not(:nth-child(4))").offset().top - $(window).scrollTop() - $(window).height() - 40 < 0){
 			$(".first-screen__cont:not(:first-child)").addClass("js__scrolled")
 			if (!window.matchMedia("(max-width: 1000px)").matches)
-				$(".about__cont:not(:nth-child(3))").removeClass("js__scrolled")
+				$(".about__cont:not(:nth-child(4))").removeClass("js__scrolled")
 		}else{
 			$(".first-screen__cont:not(:first-child)").removeClass("js__scrolled")
-			$(".about__cont:not(:nth-child(3))").addClass("js__scrolled")
+			$(".about__cont:not(:nth-child(4))").addClass("js__scrolled")
 		}
 	})
 
@@ -47,13 +47,13 @@ document.addEventListener("DOMContentLoaded", e => {
 				$(this).addClass("js__scrolled")
 		})
 
-		if ($(".about__cont:not(:nth-child(3))").offset().top - $(window).scrollTop()- 40 < 0){
+		if ($(".about__cont:not(:nth-child(4))").offset().top - $(window).scrollTop()- 40 < 0){
 			$(".first-screen__cont:not(:first-child)").addClass("js__scrolled")
 			if (!window.matchMedia("(max-width: 1000px)").matches)
-				$(".about__cont:not(:nth-child(3))").removeClass("js__scrolled")
+				$(".about__cont:not(:nth-child(4))").removeClass("js__scrolled")
 		}else{
 			$(".first-screen__cont:not(:first-child)").removeClass("js__scrolled")
-			$(".about__cont:not(:nth-child(3))").addClass("js__scrolled")
+			$(".about__cont:not(:nth-child(4))").addClass("js__scrolled")
 		}
 	})
 
@@ -63,13 +63,13 @@ document.addEventListener("DOMContentLoaded", e => {
 				$(this).addClass("js__scrolled")
 		})
 
-		if ($(".about__cont:not(:nth-child(3))").offset().top - $(window).scrollTop() - 40 < 0){
+		if ($(".about__cont:not(:nth-child(4))").offset().top - $(window).scrollTop() - 40 < 0){
 			$(".first-screen__cont:not(:first-child)").addClass("js__scrolled")
 			if (!window.matchMedia("(max-width: 1000px)").matches)
-				$(".about__cont:not(:nth-child(3))").removeClass("js__scrolled")
+				$(".about__cont:not(:nth-child(4))").removeClass("js__scrolled")
 		}else{
 			$(".first-screen__cont:not(:first-child)").removeClass("js__scrolled")
-			$(".about__cont:not(:nth-child(3))").addClass("js__scrolled")
+			$(".about__cont:not(:nth-child(4))").addClass("js__scrolled")
 		}
 	})
 })
